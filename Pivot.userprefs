@@ -1,0 +1,28 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ThirdPersonCharacter.cs">
+    <Files>
+      <File FileName="Assets\ProceduralGeneration.cs" Line="68" Column="1" />
+      <File FileName="Assets\_2DParticle.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\LockOffset.cs" Line="1" Column="1" />
+      <File FileName="Assets\TurretControl.cs" Line="32" Column="84" />
+      <File FileName="Assets\FORGE3D\Sci-Fi Effects\Code\Turrets\F3DTurret.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\MouseGrab.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ThirdPersonUserControl.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ThirdPersonCharacter.cs" Line="46" Column="3" />
+      <File FileName="Assets\Scripts\AICharacterControl.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ThirdPersonAnimator.cs" Line="1" Column="1" />
+      <File FileName="Assets\GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\CameraController.cs" Line="1" Column="1" />
+      <File FileName="Assets\RootMotion\Shared Demo Assets\Scripts\Character Controllers\CharacterBase.cs" Line="1" Column="1" />
+      <File FileName="Assets\WeaponManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Weapon.cs" Line="1" Column="1" />
+      <File FileName="Assets\BulletTracer.cs" Line="85" Column="7" />
+      <File FileName="Assets\AutoDestruct.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
