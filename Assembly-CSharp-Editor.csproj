@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{552B38BF-B51C-BE3C-47B3-22038B17D1FD}</ProjectGuid>
+    <ProjectGuid>{7DA8BFB7-B5D6-989E-2E92-3C8BFD068EE6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -109,7 +109,6 @@
      <Compile Include="Assets\RootMotion\Scripts\Editor\SerializedContent.cs" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\WarpJump.shader" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\Projectile.shader" />
-     <None Include="Assets\Huge Mocap Library\READTHIS.txt" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\Billboard.shader" />
      <None Include="Assets\Photon Unity Networking\Demos\MarcoPolo-Tutorial\marcopolo-readme.txt" />
      <None Include="Assets\Photon Unity Networking\link.xml" />
@@ -118,10 +117,8 @@
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\WarpTunnelDistortion.shader" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\Trail.shader" />
      <None Include="Assets\Plugins\Photon3Unity3D.xml" />
-     <None Include="Assets\Huge Mocap Library\mocap animations\cmu-mocap-index-text.txt" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\AlphaBlended.shader" />
      <None Include="Assets\Plugins\release_history.txt" />
-     <None Include="Assets\Ancient Japanese Blades\ReadMe.txt" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\Surface.shader" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\Debris.shader" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\WarpJumpDistortion.shader" />
@@ -168,13 +165,13 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll</HintPath>
  </Reference>
  <Reference Include="Newtonsoft.Json">
- <HintPath>E:/Pivot/Assets/Photon Unity Networking/Editor/PhotonNetwork/Newtonsoft.Json.dll</HintPath>
+ <HintPath>E:/SCRUM/ScrumRunner/ScrumRunner/Assets/Photon Unity Networking/Editor/PhotonNetwork/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="Photon3Unity3D">
- <HintPath>E:/Pivot/Assets/Plugins/Photon3Unity3D.dll</HintPath>
+ <HintPath>E:/SCRUM/ScrumRunner/ScrumRunner/Assets/Plugins/Photon3Unity3D.dll</HintPath>
  </Reference>
  <Reference Include="websocket-sharp">
- <HintPath>E:/Pivot/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
+ <HintPath>E:/SCRUM/ScrumRunner/ScrumRunner/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
@@ -197,9 +194,9 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{A3BA9BEF-1D2A-9108-3474-E0236324A77D}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{31930351-2FCB-4FAC-1894-EDFF368A11F9}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{92820423-E8D1-8F7A-F1B5-242B4E925DB9}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+      <Project>{77177567-4431-B4FB-C6E2-BD7F03B7178E}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

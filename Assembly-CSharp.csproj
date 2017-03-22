@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{92820423-E8D1-8F7A-F1B5-242B4E925DB9}</ProjectGuid>
+    <ProjectGuid>{77177567-4431-B4FB-C6E2-BD7F03B7178E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -45,9 +45,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AutoDestruct.cs" />
-     <Compile Include="Assets\BulletTracer.cs" />
-     <Compile Include="Assets\CameraController.cs" />
      <Compile Include="Assets\FORGE3D\PoolManager\F3DPool.cs" />
      <Compile Include="Assets\FORGE3D\PoolManager\F3DPoolContainer.cs" />
      <Compile Include="Assets\FORGE3D\PoolManager\F3DPoolManager.cs" />
@@ -87,9 +84,6 @@
      <Compile Include="Assets\FORGE3D\Sci-Fi Effects\Examples\Code\F3DNebula.cs" />
      <Compile Include="Assets\FORGE3D\Sci-Fi Effects\Examples\Code\F3DTrailExample.cs" />
      <Compile Include="Assets\FORGE3D\Sci-Fi Effects\Examples\Code\F3DTurnTable.cs" />
-     <Compile Include="Assets\GameManager.cs" />
-     <Compile Include="Assets\Huge Mocap Library\demo\scripts\demo.cs" />
-     <Compile Include="Assets\Huge Mocap Library\demo\scripts\smoothFollow.cs" />
      <Compile Include="Assets\Photon Unity Networking\Demos\Demo2DJumpAndRunWithPhysics\Scripts\Demo2DJumpAndRun.cs" />
      <Compile Include="Assets\Photon Unity Networking\Demos\Demo2DJumpAndRunWithPhysics\Scripts\JumpAndRunMovement.cs" />
      <Compile Include="Assets\Photon Unity Networking\Demos\DemoBoxes\ColorPerPlayer.cs" />
@@ -238,7 +232,6 @@
      <Compile Include="Assets\PhotonChatApi\ChatState.cs" />
      <Compile Include="Assets\PhotonChatApi\ChatUserStatus.cs" />
      <Compile Include="Assets\PhotonChatApi\IChatClientListener.cs" />
-     <Compile Include="Assets\ProceduralGeneration.cs" />
      <Compile Include="Assets\RootMotion\FinalIK\BipedIK\BipedIK.cs" />
      <Compile Include="Assets\RootMotion\FinalIK\BipedIK\BipedIKSolvers.cs" />
      <Compile Include="Assets\RootMotion\FinalIK\Constraints\Constraint.cs" />
@@ -389,18 +382,22 @@
      <Compile Include="Assets\RootMotion\Shared Demo Assets\Scripts\Character Controllers\UserControlThirdPerson.cs" />
      <Compile Include="Assets\RootMotion\Shared Demo Assets\Scripts\Misc\SlowMo.cs" />
      <Compile Include="Assets\Scripts\AICharacterControl.cs" />
+     <Compile Include="Assets\Scripts\AutoDestruct.cs" />
+     <Compile Include="Assets\Scripts\BulletTracer.cs" />
+     <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\LockOffset.cs" />
      <Compile Include="Assets\Scripts\MouseGrab.cs" />
+     <Compile Include="Assets\Scripts\ProceduralGeneration.cs" />
      <Compile Include="Assets\Scripts\ThirdPersonAnimator.cs" />
      <Compile Include="Assets\Scripts\ThirdPersonCharacter.cs" />
      <Compile Include="Assets\Scripts\ThirdPersonUserControl.cs" />
-     <Compile Include="Assets\TurretControl.cs" />
-     <Compile Include="Assets\Weapon.cs" />
-     <Compile Include="Assets\WeaponManager.cs" />
-     <Compile Include="Assets\_2DParticle.cs" />
+     <Compile Include="Assets\Scripts\TurretControl.cs" />
+     <Compile Include="Assets\Scripts\Weapon.cs" />
+     <Compile Include="Assets\Scripts\WeaponManager.cs" />
+     <Compile Include="Assets\Scripts\_2DParticle.cs" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\WarpJump.shader" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\Projectile.shader" />
-     <None Include="Assets\Huge Mocap Library\READTHIS.txt" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\Billboard.shader" />
      <None Include="Assets\Photon Unity Networking\Demos\MarcoPolo-Tutorial\marcopolo-readme.txt" />
      <None Include="Assets\Photon Unity Networking\link.xml" />
@@ -409,10 +406,8 @@
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\WarpTunnelDistortion.shader" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\Trail.shader" />
      <None Include="Assets\Plugins\Photon3Unity3D.xml" />
-     <None Include="Assets\Huge Mocap Library\mocap animations\cmu-mocap-index-text.txt" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\AlphaBlended.shader" />
      <None Include="Assets\Plugins\release_history.txt" />
-     <None Include="Assets\Ancient Japanese Blades\ReadMe.txt" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\Surface.shader" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\Debris.shader" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\WarpJumpDistortion.shader" />
@@ -441,15 +436,15 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="Photon3Unity3D">
- <HintPath>E:/Pivot/Assets/Plugins/Photon3Unity3D.dll</HintPath>
+ <HintPath>E:/SCRUM/ScrumRunner/ScrumRunner/Assets/Plugins/Photon3Unity3D.dll</HintPath>
  </Reference>
  <Reference Include="websocket-sharp">
- <HintPath>E:/Pivot/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
+ <HintPath>E:/SCRUM/ScrumRunner/ScrumRunner/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{A3BA9BEF-1D2A-9108-3474-E0236324A77D}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{31930351-2FCB-4FAC-1894-EDFF368A11F9}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

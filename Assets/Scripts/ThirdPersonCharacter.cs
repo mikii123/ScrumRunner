@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class ThirdPersonCharacter : MonoBehaviour
 {
+	[SerializeField] float Speed = 6f;
 	[SerializeField] float m_JumpPower = 12f;
 	[Range(1f, 4f)][SerializeField] float m_GravityMultiplier = 2f;
 	[SerializeField] float m_RunCycleLegOffset = 0.2f;
@@ -119,7 +120,7 @@ public class ThirdPersonCharacter : MonoBehaviour
 		m_Rigidbody.AddForce(extraGravityForce);
 
 		if(!IgnoreInput)
-			m_Rigidbody.velocity = new Vector3(Input.GetAxis("Horizontal") * 6, m_Rigidbody.velocity.y, m_Rigidbody.velocity.z);
+			m_Rigidbody.velocity = new Vector3(Input.GetAxis("Horizontal") * Speed, m_Rigidbody.velocity.y, m_Rigidbody.velocity.z);
 
 		if(jump && !m_JumpedInAir)
 		{
@@ -138,7 +139,7 @@ public class ThirdPersonCharacter : MonoBehaviour
 
 	void HandleGroundedMovement(bool jump)
 	{
-		m_Rigidbody.velocity = new Vector3(Input.GetAxis("Horizontal") * 6, m_Rigidbody.velocity.y, m_Rigidbody.velocity.z);
+		m_Rigidbody.velocity = new Vector3(Input.GetAxis("Horizontal") * Speed, m_Rigidbody.velocity.y, m_Rigidbody.velocity.z);
 
 		if (jump)
 		{
