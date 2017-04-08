@@ -84,7 +84,6 @@
      <Compile Include="Assets\FORGE3D\Sci-Fi Effects\Examples\Code\F3DNebula.cs" />
      <Compile Include="Assets\FORGE3D\Sci-Fi Effects\Examples\Code\F3DTrailExample.cs" />
      <Compile Include="Assets\FORGE3D\Sci-Fi Effects\Examples\Code\F3DTurnTable.cs" />
-     <Compile Include="Assets\Message.cs" />
      <Compile Include="Assets\Photon Unity Networking\Demos\Demo2DJumpAndRunWithPhysics\Scripts\Demo2DJumpAndRun.cs" />
      <Compile Include="Assets\Photon Unity Networking\Demos\Demo2DJumpAndRunWithPhysics\Scripts\JumpAndRunMovement.cs" />
      <Compile Include="Assets\Photon Unity Networking\Demos\DemoBoxes\ColorPerPlayer.cs" />
@@ -233,7 +232,6 @@
      <Compile Include="Assets\PhotonChatApi\ChatState.cs" />
      <Compile Include="Assets\PhotonChatApi\ChatUserStatus.cs" />
      <Compile Include="Assets\PhotonChatApi\IChatClientListener.cs" />
-     <Compile Include="Assets\ProjectTimer.cs" />
      <Compile Include="Assets\RootMotion\FinalIK\BipedIK\BipedIK.cs" />
      <Compile Include="Assets\RootMotion\FinalIK\BipedIK\BipedIKSolvers.cs" />
      <Compile Include="Assets\RootMotion\FinalIK\Constraints\Constraint.cs" />
@@ -390,8 +388,11 @@
      <Compile Include="Assets\Scripts\CharacterStats.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\LockOffset.cs" />
+     <Compile Include="Assets\Scripts\Message.cs" />
      <Compile Include="Assets\Scripts\MouseGrab.cs" />
      <Compile Include="Assets\Scripts\ProceduralGeneration.cs" />
+     <Compile Include="Assets\Scripts\ProjectTimer.cs" />
+     <Compile Include="Assets\Scripts\StopOutOfScreen.cs" />
      <Compile Include="Assets\Scripts\ThirdPersonAnimator.cs" />
      <Compile Include="Assets\Scripts\ThirdPersonCharacter.cs" />
      <Compile Include="Assets\Scripts\ThirdPersonUserControl.cs" />
@@ -399,7 +400,6 @@
      <Compile Include="Assets\Scripts\Weapon.cs" />
      <Compile Include="Assets\Scripts\WeaponManager.cs" />
      <Compile Include="Assets\Scripts\_2DParticle.cs" />
-     <Compile Include="Assets\StopOutOfScreen.cs" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\WarpJump.shader" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\Projectile.shader" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\Billboard.shader" />
@@ -421,7 +421,6 @@
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\Holographic.shader" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\WarpJumpTwist.shader" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\ExhaustFlame.shader" />
-     <None Include="Assets\AnimationsKickReadMe.txt" />
      <None Include="Assets\Raw Mocap Data\Animations\_CompleteAnimationList.txt" />
      <None Include="Assets\Photon Unity Networking\Demos\DemoPickup\Assets\3dFont\3dText.shader" />
      <None Include="Assets\Photon Unity Networking\readme.txt" />

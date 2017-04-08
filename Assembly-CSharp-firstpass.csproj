@@ -107,7 +107,6 @@
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\Holographic.shader" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\WarpJumpTwist.shader" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\ExhaustFlame.shader" />
-     <None Include="Assets\AnimationsKickReadMe.txt" />
      <None Include="Assets\Raw Mocap Data\Animations\_CompleteAnimationList.txt" />
      <None Include="Assets\Photon Unity Networking\Demos\DemoPickup\Assets\3dFont\3dText.shader" />
      <None Include="Assets\Photon Unity Networking\readme.txt" />
