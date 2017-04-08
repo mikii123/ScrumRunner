@@ -1,10 +1,11 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(CapsuleCollider))]
 [RequireComponent(typeof(Animator))]
 public class ThirdPersonCharacter : MonoBehaviour
 {
+	public LayerMask mask;
+	[SerializeField] float KillDepth = 6f;
 	[SerializeField] float Speed = 6f;
 	[SerializeField] float m_JumpPower = 12f;
 	[Range(1f, 4f)][SerializeField] float m_GravityMultiplier = 2f;
@@ -24,9 +25,6 @@ public class ThirdPersonCharacter : MonoBehaviour
 	const float k_Half = 0.5f;
 	float m_ForwardAmount;
 	Vector3 m_GroundNormal;
-	float m_CapsuleHeight;
-	Vector3 m_CapsuleCenter;
-	CapsuleCollider m_Capsule;
 	bool m_Crouching;
 	bool m_JumpedInAir = false;
 
@@ -35,9 +33,6 @@ public class ThirdPersonCharacter : MonoBehaviour
 		m_Animator = GetComponent<Animator>();
 		m_TPAnimator = GetComponent<ThirdPersonAnimator>();
 		m_Rigidbody = GetComponent<Rigidbody>();
-		m_Capsule = GetComponent<CapsuleCollider>();
-		m_CapsuleHeight = m_Capsule.height;
-		m_CapsuleCenter = m_Capsule.center;
 
 		m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 		m_OrigGroundCheckDistance = m_GroundCheckDistance;
@@ -62,47 +57,11 @@ public class ThirdPersonCharacter : MonoBehaviour
 			HandleAirborneMovement(move, jump);
 		}
 
-		ScaleCapsuleForCrouching(false);
-		PreventStandingInLowHeadroom();
-
 		UpdateAnimator(move);
-	}
 
-
-	void ScaleCapsuleForCrouching(bool crouch)
-	{
-		if (m_IsGrounded && crouch)
+		if(transform.position.y <= KillDepth)
 		{
-			if (m_Crouching) return;
-			m_Capsule.height = m_Capsule.height / 2f;
-			m_Capsule.center = m_Capsule.center / 2f;
-			m_Crouching = true;
-		}
-		else
-		{
-			Ray crouchRay = new Ray(m_Rigidbody.position + Vector3.up * m_Capsule.radius * k_Half, Vector3.up);
-			float crouchRayLength = m_CapsuleHeight - m_Capsule.radius * k_Half;
-			if (Physics.SphereCast(crouchRay, m_Capsule.radius * k_Half, crouchRayLength, ~0, QueryTriggerInteraction.Ignore))
-			{
-				m_Crouching = true;
-				return;
-			}
-			m_Capsule.height = m_CapsuleHeight;
-			m_Capsule.center = m_CapsuleCenter;
-			m_Crouching = false;
-		}
-	}
-
-	void PreventStandingInLowHeadroom()
-	{
-		if (!m_Crouching)
-		{
-			Ray crouchRay = new Ray(m_Rigidbody.position + Vector3.up * m_Capsule.radius * k_Half, Vector3.up);
-			float crouchRayLength = m_CapsuleHeight - m_Capsule.radius * k_Half;
-			if (Physics.SphereCast(crouchRay, m_Capsule.radius * k_Half, crouchRayLength, ~0, QueryTriggerInteraction.Ignore))
-			{
-				m_Crouching = true;
-			}
+			GetComponent<CharacterStats>().Kill(transform.up);
 		}
 	}
 
@@ -183,7 +142,7 @@ public class ThirdPersonCharacter : MonoBehaviour
 		RaycastHit hitInfo;
 		Debug.DrawLine(transform.position + (Vector3.up * 0.1f), transform.position + (Vector3.up * 0.1f) + (Vector3.down * m_GroundCheckDistance), Color.blue);
 
-		if (Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out hitInfo, m_GroundCheckDistance))
+		if (Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out hitInfo, m_GroundCheckDistance, mask.value))
 		{
 			m_GroundNormal = hitInfo.normal;
 			m_IsGrounded = true;

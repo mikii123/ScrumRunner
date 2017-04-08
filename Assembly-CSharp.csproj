@@ -84,6 +84,7 @@
      <Compile Include="Assets\FORGE3D\Sci-Fi Effects\Examples\Code\F3DNebula.cs" />
      <Compile Include="Assets\FORGE3D\Sci-Fi Effects\Examples\Code\F3DTrailExample.cs" />
      <Compile Include="Assets\FORGE3D\Sci-Fi Effects\Examples\Code\F3DTurnTable.cs" />
+     <Compile Include="Assets\Message.cs" />
      <Compile Include="Assets\Photon Unity Networking\Demos\Demo2DJumpAndRunWithPhysics\Scripts\Demo2DJumpAndRun.cs" />
      <Compile Include="Assets\Photon Unity Networking\Demos\Demo2DJumpAndRunWithPhysics\Scripts\JumpAndRunMovement.cs" />
      <Compile Include="Assets\Photon Unity Networking\Demos\DemoBoxes\ColorPerPlayer.cs" />
@@ -232,6 +233,7 @@
      <Compile Include="Assets\PhotonChatApi\ChatState.cs" />
      <Compile Include="Assets\PhotonChatApi\ChatUserStatus.cs" />
      <Compile Include="Assets\PhotonChatApi\IChatClientListener.cs" />
+     <Compile Include="Assets\ProjectTimer.cs" />
      <Compile Include="Assets\RootMotion\FinalIK\BipedIK\BipedIK.cs" />
      <Compile Include="Assets\RootMotion\FinalIK\BipedIK\BipedIKSolvers.cs" />
      <Compile Include="Assets\RootMotion\FinalIK\Constraints\Constraint.cs" />
@@ -385,6 +387,7 @@
      <Compile Include="Assets\Scripts\AutoDestruct.cs" />
      <Compile Include="Assets\Scripts\BulletTracer.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\CharacterStats.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\LockOffset.cs" />
      <Compile Include="Assets\Scripts\MouseGrab.cs" />
@@ -396,6 +399,7 @@
      <Compile Include="Assets\Scripts\Weapon.cs" />
      <Compile Include="Assets\Scripts\WeaponManager.cs" />
      <Compile Include="Assets\Scripts\_2DParticle.cs" />
+     <Compile Include="Assets\StopOutOfScreen.cs" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\WarpJump.shader" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\Projectile.shader" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\Billboard.shader" />

@@ -12,6 +12,12 @@ public class Weapon : MonoBehaviour
 	public bool Equipped = false;
 
 	private float curFire = 0;
+	private AudioSource AS;
+
+	void Start()
+	{
+		AS = GetComponent<AudioSource>();
+	}
 
 	void Update()
 	{
@@ -59,6 +65,7 @@ public class Weapon : MonoBehaviour
 			BulletTracer bt = go.GetComponent<BulletTracer>();
 			bt.Owner = Owner;
 			bt.Weapon = Spawn;
+			AS.Play();
 		}
 	}
 }

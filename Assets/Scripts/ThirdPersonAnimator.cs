@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ThirdPersonAnimator : MonoBehaviour
 {
@@ -10,19 +11,27 @@ public class ThirdPersonAnimator : MonoBehaviour
 	private float distance;
 	private Vector3 direction;
 
-	public ParticleSystem LeftLeg;
-	public ParticleSystem RightLeg;
+	public List<Transform> Trails = new List<Transform>();
+	private List<Transform> TrailParents = new List<Transform>();
+	public GameObject TrailPrefab;
 
 	private Animator Anim;
 	private WeaponManager WM;
 	private bool push = false;
 	private Vector3 fromPushPos;
+	private bool once = true;
 
 	void Start()
 	{
 		Anim = GetComponent<Animator>();
 		distance = PushDistance;
 		WM = GetComponent<WeaponManager>();
+		foreach(var ob in Trails)
+		{
+			TrailParents.Add(ob.parent);
+			ob.SetParent(null);
+		}
+		Trails.Clear();
 	}
 
 	void Update()
@@ -40,10 +49,35 @@ public class ThirdPersonAnimator : MonoBehaviour
 					distance = Vector3.Distance(fromPushPos, hit.point);
 			}
 			transform.position = Vector3.Lerp(fromPushPos, fromPushPos + direction * distance, Push.Evaluate(curPushT));
+
+			if(once)
+			{
+				foreach(var ob in TrailParents)
+				{
+					GameObject go = Instantiate(TrailPrefab, ob.position, ob.rotation) as GameObject;
+					go.transform.SetParent(ob);
+					go.transform.localPosition = Vector3.zero;
+					go.transform.localScale = Vector3.one;
+					go.transform.localRotation = Quaternion.identity;
+					Trails.Add(go.transform);
+				}
+				once = false;
+			}
 		}
+
 		if(curPushT >= 1)
 		{
 			push = false;
+		}
+
+		if(!push)
+		{
+			foreach(var ob in Trails)
+			{
+				ob.SetParent(null);
+			}
+			Trails.Clear();
+			once = true;
 		}
 
 		Anim.SetBool("Weapon", WM.Weapon == null ? false : true);

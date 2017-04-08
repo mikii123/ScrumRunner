@@ -71,6 +71,10 @@ public class BulletTracer : MonoBehaviour
 
 			if(found)
 			{
+				if(HitUse.rigidbody != null && HitUse.rigidbody.GetComponent<CharacterStats>())
+				{
+					HitUse.rigidbody.GetComponent<CharacterStats>().Damage(Damage, transform.forward);
+				}
 				GameObject go = Instantiate(Impact, HitUse.point + HitUse.normal * 0.1f, Quaternion.LookRotation(HitUse.normal)) as GameObject;
 				Destroy(gameObject);
 			}

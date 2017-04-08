@@ -7,6 +7,7 @@ public class ProceduralGeneration : MonoBehaviour
 	[System.Serializable]
 	public class PowerUp
 	{
+		public bool Turret = false;
 		public int Chance;
 		public GameObject Prefab;
 		[HideInInspector]
@@ -104,10 +105,17 @@ public class ProceduralGeneration : MonoBehaviour
 		{
 			GameObject go = Instantiate(PUuse.Prefab, position + Vector3.up * 100, PUuse.Prefab.transform.rotation) as GameObject;
 
-			RaycastHit hit = new RaycastHit();
-			if(Physics.Raycast(go.transform.position, Vector3.down, out hit, Mathf.Infinity))
+			if(PUuse.Turret)
 			{
-				go.transform.position = hit.point + Vector3.up;
+				go.transform.position = new Vector3(go.transform.position.x, 14.3f, go.transform.position.z);
+			}
+			else
+			{
+				RaycastHit hit = new RaycastHit();
+				if(Physics.Raycast(go.transform.position, Vector3.down, out hit, Mathf.Infinity))
+				{
+					go.transform.position = hit.point + Vector3.up;
+				}
 			}
 		}
 	}

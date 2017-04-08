@@ -2,7 +2,19 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ThirdPersonCharacter.cs">
     <Files>
-      <File FileName="Assets\Scripts\ThirdPersonCharacter.cs" Line="142" Column="73" />
+      <File FileName="Assets\Scripts\ProceduralGeneration.cs" Line="110" Column="96" />
+      <File FileName="Assets\Scripts\ThirdPersonCharacter.cs" Line="111" Column="4" />
+      <File FileName="Assets\Scripts\BulletTracer.cs" Line="73" Column="5" />
+      <File FileName="Assets\Scripts\ThirdPersonAnimator.cs" Line="57" Column="62" />
+      <File FileName="Assets\Scripts\CharacterStats.cs" Line="40" Column="4" />
+      <File FileName="Assets\Scripts\GameManager.cs" Line="72" Column="32" />
+      <File FileName="Assets\StopOutOfScreen.cs" Line="25" Column="27" />
+      <File FileName="Assets\Scripts\TurretControl.cs" Line="28" Column="74" />
+      <File FileName="Assets\Scripts\ThirdPersonUserControl.cs" Line="96" Column="15" />
+      <File FileName="Assets\FORGE3D\Sci-Fi Effects\Code\Turrets\F3DTurret.cs" Line="1" Column="1" />
+      <File FileName="Assets\Message.cs" Line="37" Column="13" />
+      <File FileName="Assets\ProjectTimer.cs" Line="23" Column="64" />
+      <File FileName="Assets\Scripts\Weapon.cs" Line="68" Column="14" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

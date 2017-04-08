@@ -90,4 +90,9 @@ public class ThirdPersonUserControl : MonoBehaviour
 
 		m_Jump = false;
 	}
+
+	void OnDestroy()
+	{
+		This = null;
+	}
 }
