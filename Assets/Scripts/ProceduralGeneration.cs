@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class ProceduralGeneration : MonoBehaviour
 {
+	public static ProceduralGeneration This;
+
 	[System.Serializable]
 	public class PowerUp
 	{
@@ -17,20 +19,39 @@ public class ProceduralGeneration : MonoBehaviour
 	public List<GameObject> Prefabs = new List<GameObject>();
 	public List<GameObject> StartingQueue = new List<GameObject>();
 	public List<PowerUp> PowerUps = new List<ProceduralGeneration.PowerUp>();
+
+	private List<GameObject> blocks = new List<GameObject>();
+	private List<GameObject> powerUps = new List<GameObject>();
+
 	public int MaxBlocks;
 	public bool AtStart;
 
 	private int lastPart = 0;
 	private int lastIndex = 0;
 
-	void Start()
+	void OnEnable()
 	{
+		This = this;
+
+		lastPart = 0;
+		lastIndex = 0;
+
+		foreach(var b in blocks)
+		{
+			Destroy(b);
+		}
+		foreach(var p in powerUps)
+		{
+			Destroy(p);
+		}
+
 		foreach(var ob in StartingQueue)
 		{
 			GameObject go = Instantiate(ob, transform.position, transform.rotation) as GameObject;
 			go.transform.SetParent(transform);
 			go.transform.localPosition = Vector3.zero + Vector3.left * (lastPart * 6.2f);
 			go.transform.localRotation = Quaternion.identity;
+			blocks.Add(go);
 
 			lastPart++;
 		}
@@ -73,6 +94,7 @@ public class ProceduralGeneration : MonoBehaviour
 			go.transform.SetParent(transform);
 			go.transform.localPosition = Vector3.zero + Vector3.left * (lastPart * 6.2f);
 			go.transform.localRotation = Quaternion.identity;
+			blocks.Add(go);
 
 			Powerup(go.transform.position);
 		}
@@ -117,6 +139,8 @@ public class ProceduralGeneration : MonoBehaviour
 					go.transform.position = hit.point + Vector3.up;
 				}
 			}
+
+			powerUps.Add(go);
 		}
 	}
 }

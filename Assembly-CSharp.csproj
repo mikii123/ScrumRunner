@@ -386,12 +386,14 @@
      <Compile Include="Assets\Scripts\BulletTracer.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\CharacterStats.cs" />
+     <Compile Include="Assets\Scripts\CoffePowerUp.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\LockOffset.cs" />
      <Compile Include="Assets\Scripts\Message.cs" />
      <Compile Include="Assets\Scripts\MouseGrab.cs" />
      <Compile Include="Assets\Scripts\ProceduralGeneration.cs" />
      <Compile Include="Assets\Scripts\ProjectTimer.cs" />
+     <Compile Include="Assets\Scripts\StaminaDisplay.cs" />
      <Compile Include="Assets\Scripts\StopOutOfScreen.cs" />
      <Compile Include="Assets\Scripts\ThirdPersonAnimator.cs" />
      <Compile Include="Assets\Scripts\ThirdPersonCharacter.cs" />
@@ -400,6 +402,7 @@
      <Compile Include="Assets\Scripts\Weapon.cs" />
      <Compile Include="Assets\Scripts\WeaponManager.cs" />
      <Compile Include="Assets\Scripts\_2DParticle.cs" />
+     <Compile Include="Assets\UICanvas.cs" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\WarpJump.shader" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\Projectile.shader" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\Billboard.shader" />
@@ -408,6 +411,7 @@
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\Burnout.shader" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\Heat.shader" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\WarpTunnelDistortion.shader" />
+     <None Include="Assets\Ikonki\TransparentColor.shader" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\Trail.shader" />
      <None Include="Assets\Plugins\Photon3Unity3D.xml" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\AlphaBlended.shader" />

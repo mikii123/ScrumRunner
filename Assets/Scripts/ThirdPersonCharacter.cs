@@ -28,6 +28,9 @@ public class ThirdPersonCharacter : MonoBehaviour
 	bool m_Crouching;
 	bool m_JumpedInAir = false;
 
+	bool canDash = false;
+	bool requireDouble = true;
+
 	void Start()
 	{
 		m_Animator = GetComponent<Animator>();
@@ -65,6 +68,45 @@ public class ThirdPersonCharacter : MonoBehaviour
 		}
 	}
 
+	void Update()
+	{
+		if(!m_IsGrounded)
+		{
+//			if(requireDouble)
+//			{
+				if(Input.GetKeyUp(KeyCode.Space))
+				{
+					canDash = true;
+				}
+//			}
+//			else
+//			{
+//				canDash = true;
+//			}
+
+			if(canDash && Input.GetKey(KeyCode.Space))
+			{
+				m_TPAnimator.PushForward();
+			}
+			else
+			{
+				m_TPAnimator.DontPush();
+			}
+		}
+		else
+		{
+			if(Input.GetKeyDown(KeyCode.Space))
+			{
+				requireDouble = true;
+			}
+			else
+			{
+				requireDouble = false;
+			}
+			canDash = false;
+			m_TPAnimator.DontPush();
+		}
+	}
 
 	void UpdateAnimator(Vector3 move)
 	{
@@ -80,12 +122,6 @@ public class ThirdPersonCharacter : MonoBehaviour
 
 		if(!IgnoreInput)
 			m_Rigidbody.velocity = new Vector3(Input.GetAxis("Horizontal") * Speed, m_Rigidbody.velocity.y, m_Rigidbody.velocity.z);
-
-		if(jump && !m_JumpedInAir)
-		{
-			m_JumpedInAir = true;
-			m_TPAnimator.PushForward(5);
-		}
 
 		if(m_Rigidbody.velocity.y < 0)
 		{
@@ -150,6 +186,7 @@ public class ThirdPersonCharacter : MonoBehaviour
 			m_Animator.SetBool("Jump", false);
 			m_Animator.SetBool("JumpDown", false);
 			m_Animator.applyRootMotion = true;
+			transform.position = new Vector3(transform.position.x, hitInfo.point.y, transform.position.z);
 		}
 		else
 		{

@@ -20,7 +20,7 @@ public class ThirdPersonUserControl : MonoBehaviour
 	private float comboTimer = 0.2f;
 	private float curComboT = 0;
 
-	private bool kick = false;
+	private bool dash = false;
 
 	void Awake()
 	{
@@ -51,19 +51,6 @@ public class ThirdPersonUserControl : MonoBehaviour
 		{
 			m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
 		}
-
-		if(Input.GetMouseButtonDown(1))
-		{
-			kick = true;
-			curComboT = 0;
-		}
-
-		if(curComboT >= comboTimer)
-		{
-			kick = false;
-		}
-
-		m_TAnimator.UpdateAnimator(kick);
 	}
 
 

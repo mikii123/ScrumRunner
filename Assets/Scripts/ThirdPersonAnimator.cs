@@ -4,18 +4,14 @@ using System.Collections.Generic;
 
 public class ThirdPersonAnimator : MonoBehaviour
 {
-	public AnimationCurve Push;
-	public float PushTime;
-	private float curPushT;
-	public float PushDistance;
-	private float distance;
-	private Vector3 direction;
-
+	public LayerMask mask;
+	public float DashSpeed = 100;
 	public List<Transform> Trails = new List<Transform>();
 	private List<Transform> TrailParents = new List<Transform>();
 	public GameObject TrailPrefab;
 
 	private Animator Anim;
+	private Rigidbody Rigid;
 	private WeaponManager WM;
 	private bool push = false;
 	private Vector3 fromPushPos;
@@ -24,34 +20,28 @@ public class ThirdPersonAnimator : MonoBehaviour
 	void Start()
 	{
 		Anim = GetComponent<Animator>();
-		distance = PushDistance;
 		WM = GetComponent<WeaponManager>();
+		Rigid = GetComponent<Rigidbody>();
 		foreach(var ob in Trails)
 		{
 			TrailParents.Add(ob.parent);
-			ob.SetParent(null);
+			Destroy(ob.gameObject);
 		}
 		Trails.Clear();
 	}
 
-	void Update()
+	void FixedUpdate()
 	{
-		curPushT += Time.deltaTime / PushTime;
-		curPushT = Mathf.Clamp01(curPushT);
+		if(GameManager.This.PlayerStats.Stamina <= 0)
+		{
+			push = false;
+		}
+
 		if(push)
 		{
-			fromPushPos.y = transform.position.y;
-			RaycastHit hit = new RaycastHit();
-
-			if(Physics.Raycast(fromPushPos, direction, out hit, distance))
-			{
-				if(!hit.transform.GetComponent<ThirdPersonUserControl>())
-					distance = Vector3.Distance(fromPushPos, hit.point);
-			}
-			transform.position = Vector3.Lerp(fromPushPos, fromPushPos + direction * distance, Push.Evaluate(curPushT));
-
 			if(once)
 			{
+				fromPushPos = transform.position;
 				foreach(var ob in TrailParents)
 				{
 					GameObject go = Instantiate(TrailPrefab, ob.position, ob.rotation) as GameObject;
@@ -63,21 +53,38 @@ public class ThirdPersonAnimator : MonoBehaviour
 				}
 				once = false;
 			}
-		}
 
-		if(curPushT >= 1)
+			Rigid.isKinematic = true;
+			transform.position = new Vector3(transform.position.x, fromPushPos.y, transform.position.z);
+			transform.position += transform.forward * DashSpeed * Time.deltaTime;
+
+			Anim.SetBool("Dash", true);
+		}
+		else
 		{
-			push = false;
+			Rigid.isKinematic = false;
+			RaycastHit hit = new RaycastHit();
+
+			float distace = Vector3.Distance(transform.position + transform.up * 30, transform.position);
+
+			if(Physics.Raycast(transform.position + transform.up * 30, -transform.up, out hit, distace, mask))
+			{
+				if(!hit.transform.GetComponent<ThirdPersonUserControl>())
+					transform.position = new Vector3(transform.position.x, hit.point.y, transform.position.z);
+					
+			}
 		}
 
 		if(!push)
 		{
 			foreach(var ob in Trails)
 			{
-				ob.SetParent(null);
+				if(ob != null)
+					ob.SetParent(null);
 			}
 			Trails.Clear();
 			once = true;
+			Anim.SetBool("Dash", false);
 		}
 
 		Anim.SetBool("Weapon", WM.Weapon == null ? false : true);
@@ -90,20 +97,12 @@ public class ThirdPersonAnimator : MonoBehaviour
 
 	public void PushForward()
 	{
-		curPushT = 0;
-		this.distance = PushDistance;
-		this.direction = transform.forward;
-		fromPushPos = transform.position;
+		GameManager.This.PlayerStats.Stamina -= Time.deltaTime * 3;
 		push = true;
-		//LeftLeg.Play();
-		//RightLeg.Play();
 	}
 
 	public void PushForward(float distance)
 	{
-		curPushT = 0;
-		this.distance = distance;
-		this.direction = transform.forward;
 		fromPushPos = transform.position;
 		push = true;
 		//LeftLeg.Play();
@@ -112,12 +111,14 @@ public class ThirdPersonAnimator : MonoBehaviour
 
 	public void PushForward(float distance, Vector3 direction)
 	{
-		curPushT = 0;
-		this.distance = distance;
-		this.direction = direction;
 		fromPushPos = transform.position;
 		push = true;
 		//LeftLeg.Play();
 		//RightLeg.Play();
+	}
+
+	public void DontPush()
+	{
+		push = false;
 	}
 }

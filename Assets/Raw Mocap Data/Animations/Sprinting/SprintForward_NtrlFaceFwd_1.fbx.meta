@@ -159,6 +159,7 @@ ModelImporter:
     400152: TongueTip
     7400000: StandToSprint
     7400002: SprintForward_Loop
+    7400004: DashLoop
     9500000: //RootNode
   materials:
     importMaterials: 1

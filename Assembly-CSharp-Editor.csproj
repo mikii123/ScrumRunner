@@ -115,6 +115,7 @@
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\Burnout.shader" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\Heat.shader" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\WarpTunnelDistortion.shader" />
+     <None Include="Assets\Ikonki\TransparentColor.shader" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\Trail.shader" />
      <None Include="Assets\Plugins\Photon3Unity3D.xml" />
      <None Include="Assets\FORGE3D\Sci-Fi Effects\Shaders\AlphaBlended.shader" />
